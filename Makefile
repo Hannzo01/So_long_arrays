@@ -1,13 +1,17 @@
 NAME = so_long
-SRCS = so_long.c file_validate.c helpers.c
-OBJS = $(SRCS:.c:.o)
+SRCS = so_long.c validate.c helpers.c \
+	gnl/get_next_line.c\
+	gnl/get_next_line_utils.c \
+	list_utils.c validate_map.c
+
+OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 all : $(NAME)
 
-NAME : OBJS
-	$(CC) $(OBJS) -o $(NAME)
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -20,5 +24,5 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all NAME clean fclean re
+.PHONY : all clean fclean re
 

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_validate.c                                    :+:      :+:    :+:   */
+/*   validate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemzouri <kemzouri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 14:37:01 by kemzouri          #+#    #+#             */
-/*   Updated: 2025/02/19 15:28:07 by kemzouri         ###   ########.fr       */
+/*   Created: 2025/02/20 18:06:59 by kemzouri          #+#    #+#             */
+/*   Updated: 2025/02/20 18:15:08 by kemzouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "so_long.h"
 
-
-int	validate_file(char *str)
+int	wall_is_valid(char **map)
 {
-	if (ft_strlen(str) < 5)
-		return (1);
-	if (strncmp(str, ".ber", 4) != 0)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+	size_t	len;
+	
+	len = ft_strlen(map[0]);
+	
+	while (map[0] != '\0')
+	{
+		if (map[0][j] != '1')
+			return (1);
+		j++;
+	}
 }
-
-
