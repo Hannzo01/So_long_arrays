@@ -6,7 +6,7 @@
 /*   By: kemzouri <kemzouri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:23:20 by kemzouri          #+#    #+#             */
-/*   Updated: 2025/02/20 17:46:27 by kemzouri         ###   ########.fr       */
+/*   Updated: 2025/02/26 23:08:15 by kemzouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,20 @@ typedef struct s_list
 	struct s_list *next;
 }	t_list;
 
+typedef struct s_map
+{
+	char	**map;
+	int		x;
+	int		y;
+	int		len;
+}	t_map;
+
+
 //		validate 		//
 int		validate_file_name(char *str);
 int		store_map_in_list(char *str, t_list **head);
 char	**allocate_2d_array(int lignes, int colonnes);
 char	**fill_2d_array(char **map, t_list **head);
-
-
-
-
 
 //		helper functions  	//
 t_list	*lst_new(char *data);
@@ -44,6 +49,8 @@ void	ft_display(t_list *head); // DELETE LATER
 void    free_list(t_list **head);
 void	ft_display_2d_array(char **map); //DELETE LATER
 int		map_rectangulaire(char **map);
+int		ft_strlength(char *str);
+
 
 
 

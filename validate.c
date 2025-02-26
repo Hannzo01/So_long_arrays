@@ -6,7 +6,7 @@
 /*   By: kemzouri <kemzouri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:37:01 by kemzouri          #+#    #+#             */
-/*   Updated: 2025/02/20 18:06:15 by kemzouri         ###   ########.fr       */
+/*   Updated: 2025/02/22 11:42:18 by kemzouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	validate_file_name(char *str)
 {
-	size_t	len;
+	int	len;
 
-	len = ft_strlen(str);
+	len = ft_strlength(str);
 	if (len < 5)
 	{
 		printf("len is %zu\nOnly the extension exist\n", len);
@@ -75,14 +75,14 @@ char	**allocate_2d_array(int lignes, int colonnes)
 char	**fill_2d_array(char **map, t_list **head)
 {
 	int	i;
-	size_t	j;
+	int	j;
 	t_list *current = *head;
 
 	i = 0;
 	while (map[i] != NULL)
 	{
 		j = 0;
-		while (j < ft_strlen(current->data))
+		while (j < ft_strlength(current->data))
 		{
 			map[i][j] = current->data[j];
 			j++;
@@ -95,12 +95,12 @@ char	**fill_2d_array(char **map, t_list **head)
 }
 int	map_rectangulaire(char **map)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	int	i;
+	int	j;
+	int	len;
 
 	i = 0;
-	len = ft_strlen(map[0]);
+	len = ft_strlength(map[0]);
 	while (map[i] != NULL)
 	{
 		j = 0;
