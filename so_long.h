@@ -30,9 +30,14 @@ typedef struct s_list
 typedef struct s_map
 {
 	char	**map;
+	int		rows;
+	int		col;
 	int		x;
 	int		y;
 	int		len;
+	int		collectibles;
+	int		p;
+	int		e;
 }	t_map;
 
 
@@ -45,11 +50,16 @@ char	**fill_2d_array(char **map, t_list **head);
 //		helper functions  	//
 t_list	*lst_new(char *data);
 void	lst_add_back(t_list **lst, char *data);
-void	ft_display(t_list *head); // DELETE LATER
 void    free_list(t_list **head);
-void	ft_display_2d_array(char **map); //DELETE LATER
 int		map_rectangulaire(char **map);
 int		ft_strlength(char *str);
+void	ft_putstr_fd(char *s, int fd);
+int		wall_validity(t_map *g_map);
+int		check_char(char *str, char c);
+int	valid_characters(t_map *g_map);
+int	is_valid(char **map);
+void	initialize(t_map *g_map);
+int check_map_validity(t_map *game_map);
 
 
 

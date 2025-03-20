@@ -22,28 +22,5 @@ int	ft_strlength(char *str)
 	return (i);
 }
 
-void	ft_display(t_list *head)   // delete later
-{
-	while (head != NULL)
-	{
-		printf("%s", head->data);
-		head = head->next;
-	}
-	printf("\n");
-}
 
-void	ft_display_2d_array(t_map **map)
-{
-
-	while (map.x != NULL)
-	{
-		j = 0;
-		while (map[i][j] != '\0')
-		{
-			printf("%c", map[i][j]);
-			j++;
-		}
-		i++;
-	}
-}
 

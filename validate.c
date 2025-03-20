@@ -19,20 +19,16 @@ int	validate_file_name(char *str)
 	len = ft_strlength(str);
 	if (len < 5)
 	{
-		printf("len is %zu\nOnly the extension exist\n", len);
-		return (1);
+		ft_putstr_fd("Error\nInvalid name\n", 2);
+		return (0);
 	}
 	// check if the last 4 char are .ber 
 	if (strncmp(str + len - 4, ".ber", 4) != 0)  // &str[len - 4]
 	{	
-		printf("comparaison failed \n");
-		return (1);
-	}
-	else
-	{
-		//printf("valid name\n");
+		ft_putstr_fd("Error\nInvalid name\n", 2);
 		return (0);
 	}
+	return (1);
 }
 
 int	store_map_in_list(char *str, t_list **head)
@@ -48,7 +44,6 @@ int	store_map_in_list(char *str, t_list **head)
 		lst_add_back(head, line);
 		counter++;
 	}
-	//ft_display(*head);
 	return (counter);
 }
 
@@ -107,15 +102,11 @@ int	map_rectangulaire(char **map)
 		while (map[i][j] != '\0')
 			j++;
 		if (j != len)
-			return (1);
+			return (0);
 		i++;
 	}
 	i--;
 	if (i == 1)
-		return (1);
-	else
-	{	
-		printf("map is valid");
 		return (0);
-	}
+	return (1);
 }

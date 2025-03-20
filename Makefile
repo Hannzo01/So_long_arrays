@@ -2,6 +2,7 @@ NAME = so_long
 SRCS = so_long.c validate.c helpers.c \
 	gnl/get_next_line.c\
 	gnl/get_next_line_utils.c \
+	validate1.c \
 	list_utils.c validate_map.c
 
 OBJS = $(SRCS:.c=.o)
